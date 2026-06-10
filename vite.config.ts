@@ -12,4 +12,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  // Required for self-hosted Vercel deploys outside Lovable sandbox.
+  // Lovable's defineConfig wires nitro/vite — do not add the plugin manually.
+  nitro: {
+    preset: "vercel",
+  },
 });
